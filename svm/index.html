@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Vector Machine</title>
+</head>
+<body>
+    
+    <h1>Support Vector Machine</h1>
+    <p>( The main purpose of this page is practicing Latex on html ) </p>
+    
+
+    <div class="basic_thory">
+    <p>Boundary function</p>
+    \begin{align}
+    f(x) = \boldsymbol{w^T x}  + \boldsymbol{b} = 0
+    \end{align}
+
+    <p>Each \(x_i\) is in eather \(C_1 \) or \( C_2 \)</p>
+    \begin{align}
+    x_i \in C_1 \Leftrightarrow \boldsymbol{w^T x}  + \mathbf{b} < 0
+    \end{align}
+    \begin{align}
+    x_i \in C_2 \Leftrightarrow \boldsymbol{w^T x}  + \mathbf{b} > 0
+    \end{align}
+
+    using label \(t_i\) and discribe above two equations
+
+    \begin{eqnarray}
+        t_{i}=
+        \left\{ \begin{array}{ll}
+        -1 & ( x_i \in C_1  ) \\
+        1 & (x_i \in C_2 )    , \ \ \ (i = 1,2,...,n) \\
+        \end{array} \right.
+    \end{eqnarray}
+
+    \[
+    
+    \]
+
+    <p>
+    The distance \( d \) between datapoint \(\boldsymbol{x_i} = (x_1,x_2,...,x_p) \) and f(x). This dimension of \(x_i\) is \(p\)
+    </p>
+    \[
+    d = \frac{ \| \boldsymbol{w^Tx} + \boldsymbol{b} \|}{ \| \boldsymbol{w} \|}
+    \]
+
+    <p>maximize margin \(M\)</p>
+
+    
+
+    \[
+        \arg \max_{\boldsymbol{w,b}} M, \ \ \  \frac{ \boldsymbol{t_i}( \boldsymbol{w^Tx_i} + \boldsymbol{b} )}{ \| \boldsymbol{w} \|} > M, \ \ \ (i=1,2,...,n)
+    \]
+
+    </div>
+
+
+
+    <!-- <script>
+    window.MathJax = {
+    loader: {load: ['[tex]/newcommand']},
+    tex: {packages: {'[+]': ['newcommand']}}
+};
+</script> -->
+
+
+
+
+</body>
+</html>
+
+<style>
+
+.basic_thory{
+    width : 80%;
+    margin : 0 auto;
+    padding : 5px;
+    border : solid 1px #aaa;
+}
+
+</style>
