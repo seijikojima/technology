@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+</head>
+<body>
+
+    <div class="total_frame">
+
+    <h2>Collect parts according to meaning</h2>
+
+
+    <div class="collect_frame">
+    
+    <div class="bad">    
+        <div>Seiji Kojima</div>
+        <div>Design Engineer</div>
+        <div>Design Technology Sect.</div>
+        <div>Design Analytics Dept.</div>
+
+        <div>Design Corporation</div>
+        <div>1-1 Saketyo, Nagoya, Aichi, 000-0000 Japan</div>
+        <div>Tel: +81-000-00-0000</div>
+        <div>Fax +81-000-00-0000</div>
+        <div>seijikojima@desing.com</div>
+        <div>https;//seijikojima.com</div>
+    </div>
+
+    <div class="good">
+
+        <div class="name_jobtitle">
+            <div>Seiji Kojima</div>
+            <div class="small">Design Engineer</div>
+            <div class="small">Design Technology Sect., Design Analytics Dept.</div>
+        </div>
+
+        <div class="corporation">
+            <div>Design Corporation</div>
+            <div class="small">1-1 Saketyo, Nagoya, Aichi, 000-0000 Japan</div>
+            <div class="small">Tel: +81-000-00-0000, Fax +81-000-00-0000</div>
+            <div class="small">seijikojima@desing.com, https;//seijikojima.com</div>
+        </div>
+        
+    </div>
+
+    </div>
+
+
+
+    
+
+    <h2>HTML Basic Layout</h2>
+
+
+    <h3>upper navigation</h3>
+
+    <div class="upper_frame">
+        <div class="upper_nav">nav</div>
+        <div class="upper_contents">contents</div>
+    </div>
+
+
+
+    <h3>left navigation</h3>
+    <div class="left_frame">
+        <div class="left_nav">nav</div>
+        <div class="left_contents">contents</div>
+    </div>
+
+
+    
+    <h3>upper and left navigation</h3>
+    <h3>one colomn</h3>
+    <h3>three colomn</h3>
+    <h3>full screen</h3>
+    <h3>grid layout</h3>
+
+</div>
+
+    
+</body>
+</html>
+
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin : 0px;
+}
+
+.total_frame{
+    /* border : solid 1px #000; */
+    margin : 30px;
+}
+
+/* name card example */
+
+.collect_frame {
+    display: flex;
+}
+
+.bad {
+    padding : 10px;
+    font-size : 50%;
+    border : solid 1px #000;
+    width : 300px;
+}
+
+
+.good {
+    margin-left : 20px;
+    border : solid 1px #000;
+    width : 300px;
+}
+
+.name_jobtitle {
+    padding : 10px;
+}
+
+.corporation {
+    padding : 10px;
+}
+
+.small{
+    font-size : 50%;
+}
+
+/* upper nav */
+.upper_frame {
+    border : solid 1px #000;
+    width : 300px;
+    height : 200px;
+}
+.upper_nav{
+    width : 100%;
+    height : 40px;
+    background : #333;
+    color : #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.upper_contents {
+    width : 100%;
+    height : 150px;
+    background : #fff;
+    color : #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* left nav */
+.left_frame {
+    border : solid 1px #000;
+    width : 300px;
+    height : 200px;
+    display: flex;
+}
+.left_nav{
+    width : 50px;
+    height : 100%;
+    background : #333;
+    color : #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left_contents {
+    width : 250px;
+    height : 100%;
+    background : #fff;
+    color : #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+</style>

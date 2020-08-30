@@ -14,7 +14,7 @@
     <p>( The main purpose of this page is practicing Latex on html ) </p>
     
 
-    <div class="basic_thory">
+    <div class="content">
     <p>Boundary function</p>
     \begin{align}
     f(x) = \boldsymbol{w^T x}  + \boldsymbol{b} = 0
@@ -39,7 +39,7 @@
     \end{eqnarray}
 
     \[
-    
+    t_i( \boldsymbol{w^Tx_i} + \boldsymbol{b} ) > 0, \ \ \ (i=1,2,...,n)
     \]
 
     <p>
@@ -54,10 +54,33 @@
     
 
     \[
-        \arg \max_{\boldsymbol{w,b}} M, \ \ \  \frac{ \boldsymbol{t_i}( \boldsymbol{w^Tx_i} + \boldsymbol{b} )}{ \| \boldsymbol{w} \|} > M, \ \ \ (i=1,2,...,n)
+        \arg \max_{\boldsymbol{w,b}} M, \ \ \  \frac{ t_i( \boldsymbol{w^Tx_i} + \boldsymbol{b} )}{ \| \boldsymbol{w} \|} \geq M, \ \ \ (i=1,2,...,n)
     \]
 
+    \[
+      t_i( \boldsymbol{\hat{w}^T x_i} + \boldsymbol{\hat{b}} ) \geq 1, \ \ \ (\hat{\boldsymbol{w}} = \frac{ \boldsymbol{w} }{M \| \boldsymbol{w} \|}, \ \ \hat{\boldsymbol{b}} = \frac{\boldsymbol{b}}{M \| \boldsymbol{w} \|})
+    \]
+
+    <p>minimize denominator \( \|w \|^2 \)</p>
+
+    \[
+        \arg \min_{\boldsymbol{w,b}} \frac{1}{2} \| w \|^2 , \ \ \ t_i( \boldsymbol{w^Tx_i} + \boldsymbol{b} ) \geq 1, \ \ \ (i=1,2,...,n)
+    \]
+
+
+
+
     </div>
+
+    <div class="content">
+
+    <p>soft margin using slack variable \( \xi_i \) </p>
+    
+
+
+    </div>
+
+
 
 
 
@@ -76,11 +99,12 @@
 
 <style>
 
-.basic_thory{
+.content{
     width : 80%;
-    margin : 0 auto;
-    padding : 5px;
+    margin : 10px auto;
+    padding : 10px;
     border : solid 1px #aaa;
+    border-radius: 10px;
 }
 
 </style>
