@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" async 
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Carlo Localization</title>
+</head>
+<body>
+    
+    <h1>Monte Carlo Localization using Particle Filter</h1>
+
+    Monte Carlo Localization
+    2D map example \( (x,y,\theta) \)
+
+    \( X_t \) depends only on \( X_{t-1} \)
+    
+
+    <div class="content">
+        
+    <p>equation of state model</p>
+
+
+    <p>1. move and predict with particles</p>
+
+    \[
+    P( \boldsymbol{x} | \boldsymbol{u}) = N ()
+    \]
+
+    <p>2. update particles by sensor value</p>
+
+    \[
+    P( \boldsymbol{x} | \boldsymbol{z}) 
+    \]
+
+    <p>3. resampling</p>
+
+
+    </div>
+
+    <div class="content">
+
+<p>pseudocode</p>
+<pre><code>
+    _Xt = 0                                    
+    Xt = 0                                     
+    for m in range(0,M):                       
+        xt[m] = motion_update(ut,xt-1[m])      
+        wt[m] = sensor_update(zt,xt[m])        
+        _Xt = _Xt + (xt[m],wt[m])              
+                                               
+    for m in range(0,M):                       
+        draw xt[m] from _Xt with prob wt[m]    
+        Xt = Xt + xt[m]                        
+                                               
+    return Xt                                  
+
+</code></pre>
+    </div>
+</body>
+</html>
+
+<style>
+
+.content{
+    width : 80%;
+    margin : 10px auto;
+    padding : 10px;
+    border : solid 1px #aaa;
+    border-radius: 10px;
+}
+
+code {
+    background-color: #eee;
+    border-radius: 3px;
+    font-family: courier, monospace;
+    /* padding: 0 3px; */
+}
+
+
+</style>

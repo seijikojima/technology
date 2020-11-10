@@ -11,8 +11,7 @@
 <body>
     
     <h1>Support Vector Machine</h1>
-    <p>( The main purpose of this page is practicing Latex on html ) </p>
-    
+  
 
     <div class="content">
     <p>Boundary function</p>
@@ -43,7 +42,7 @@
     \]
 
     <p>
-    The distance \( d \) between datapoint \(\boldsymbol{x_i} = (x_1,x_2,...,x_p) \) and f(x). This dimension of \(x_i\) is \(p\)
+    The distance \( d \) between datapoint \(\boldsymbol{x_i} = (x_1,x_2,...,x_p) \) and \( f(x) \). This dimension of \(x_i\) is \(p\)
     </p>
     \[
     d = \frac{ \| \boldsymbol{w^Tx} + \boldsymbol{b} \|}{ \| \boldsymbol{w} \|}
@@ -67,30 +66,80 @@
         \arg \min_{\boldsymbol{w,b}} \frac{1}{2} \| w \|^2 , \ \ \ t_i( \boldsymbol{w^Tx_i} + \boldsymbol{b} ) \geq 1, \ \ \ (i=1,2,...,n)
     \]
 
-
-
+    
+  
 
     </div>
 
     <div class="content">
 
     <p>soft margin using slack variable \( \xi_i \) </p>
+
+    \[
+    t_i ( \boldsymbol{w_i^Tx_i} + \boldsymbol{b} )  \geq 1 - \xi_i
+    \]
+
+    <p>minimize this equation below</p>
+
+    \[
+    \min_{w, \ \xi} \{ \  \frac{1}{2} \|w\|^2  + C \sum^{n}{\xi_i} \  \}
+    \]
+
+    <p>if minimize the first term margin  \( \frac{1}{2} \|w\|^2  \) , the second term \( C \sum^{n}{\xi_i} \) is increasing</p>
+    <p>the term of miximize margin and the term of minimize smalleness of the data within margin are contraversive, and this is an optimisation problem under this contraversive condition</p>
     
+    </div>
+
+    <div class="content">
+    <p>dual representation (not understand completely ... ) </p>
+    <p>It's possible to decrease valuables</p>
+    <p>Kernel function can be adopted and, non-liner separation is able to be employed</p>
+    <p>Lagrange's method of undetermined multiplier</p>
+    <p>optimize problem with restriction</p>
+    
+    \[
+    L (x, \alpha)  = f(x) + \sum^{n} \alpha_i g_i(x)
+    \]
+
+    \begin{align}
+    & 1. \ \ \ \frac{\partial L(x,\alpha)}{ \partial x} =  \frac{\partial f(x)}{\partial x} + \sum^{n} \alpha_i \frac{\partial g_i(x)}{\partial x} = 0 \\
+
+    & 2. \ \ \ \frac{\partial L(x,\alpha)}{ \partial \alpha_i} =  g_i(x) \leq 0 \ \ \ i=1,2,...,n \\
+    
+
+    & 3. \ \ \ \alpha_i , \ \ \ i=1,2,...,n \\
+    
+    
+    & 4. \ \ \  \alpha_ig_i(x) = 0
+    \end{align}
+
+
+    <p>apply this to SVM</p>
+
+    \[
+    L( w,b, \xi , x, \alpha, \beta) =  \frac{1}{2} \|w\|^2  + C \sum^{n}{\xi_i} - \sum^{n} \alpha_i { \{ t_i ( \boldsymbol{w_i^Tx_i} + \boldsymbol{b} )-1+\xi_i \} } - \sum^n{\beta_i \xi_i}
+    \]
+
+
+    \begin{align}
+    &  \ \ \ \frac{\partial L}{ \partial x} =  \boldsymbol{w} - \sum{\alpha_i y_i x_i} = 0 & \Leftrightarrow  w =  \sum{\alpha_i y_i x_i}  \\
+
+    &  \ \ \ \frac{\partial L}{ \partial \beta} = - \sum{\alpha_i y_i} = 0 & \Leftrightarrow   \sum{\alpha_i y_i} = 0  \\
+    
+
+    &  \ \ \ \frac{\partial L}{ \partial w} = C - \alpha_i - \beta_i & \Leftrightarrow C = \alpha_i + \beta_i
+
+    \end{align}
+
+    <p>miximiza this function with valiable \( \alpha \) below </p>
+
+    \[
+     L(\alpha) = 
+    \]
+
 
 
     </div>
-
-
-
-
-
-    <!-- <script>
-    window.MathJax = {
-    loader: {load: ['[tex]/newcommand']},
-    tex: {packages: {'[+]': ['newcommand']}}
-};
-</script> -->
-
 
 
 
